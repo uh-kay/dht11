@@ -13,7 +13,7 @@ fn main() {
     info!("Hello, world!");
 
     let peripherals = Peripherals::take().unwrap();
-    let mut dht_pin = PinDriver::input_output(peripherals.pins.gpio18).unwrap();
+    let mut dht_pin = PinDriver::input_output_od(peripherals.pins.gpio18).unwrap();
 
     // Pulling the pin high to avoid confusing the sensor when initializing
     dht_pin.set_high().ok();
